@@ -93,7 +93,7 @@ def load_demographic_dimensions(key: str, location: str) -> pd.DataFrame:
     demographic_cols = ['sex', 'age_start', 'age_end', 'year_start', 'year_end']
 
     demographic_dimensions = pd.DataFrame([
-        ['Male', 0, 5, 2022, 2026]
+        ['Male', 0, 5, 2022, 2026],
         ['Female', 0, 5, 2022, 2026]],
         columns=demographic_cols).set_index(demographic_cols)
 
