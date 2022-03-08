@@ -90,15 +90,14 @@ def load_age_bins(key: str, location: str) -> pd.DataFrame:
 
 
 def load_demographic_dimensions(key: str, location: str) -> pd.DataFrame:
-    return pd.DataFrame([
-        {
-            'sex': ['Male', 'Female'],
-            'age_start': 0,
-            'age_end': 5,
-            'year_start': 2022,
-            'year_end': 2026,
-        }
-    ]).set_index(['sex', 'age_start', 'age_end', 'year_start', 'year_end'])
+    demographic_cols = ['sex', 'age_start', 'age_end', 'year_start', 'year_end']
+
+    demographic_dimensions = pd.DataFrame([
+        ['Male', 0, 5, 2022, 2026]
+        ['Female', 0, 5, 2022, 2026]],
+        columns=demographic_cols).set_index(demographic_cols)
+
+    return demographic_dimensions
 
 
 def load_theoretical_minimum_risk_life_expectancy(key: str, location: str) -> pd.DataFrame:
